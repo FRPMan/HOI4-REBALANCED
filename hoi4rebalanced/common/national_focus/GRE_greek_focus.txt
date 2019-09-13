@@ -1,0 +1,1180 @@
+focus_tree = { 
+id = greek_focus
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = GRE 
+} 
+} 
+#Focus for Develop Peloponnese
+focus = { 
+id = GRE_developpeloponnese
+icon = GFX_goal_generic_production
+x = 12
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_developcentralmacedonia } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+186 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+186 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Military Focus
+focus = { 
+id = GRE_militaryfocus
+icon = GFX_goal_generic_construct_mil_factory
+x = 11
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_developathens focus = GRE_developcentralmacedonia } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+
+731 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Naval Developpement
+focus = { 
+id = GRE_navaldeveloppement
+icon = GFX_goal_generic_construct_naval_dockyard
+x = 15
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+navy_experience = 25
+47 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+ type = dockyard
+ level = 2
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Five Year Plan
+focus = { 
+id = GRE_fiveyearplan
+icon = GFX_focus_generic_industry_2
+x = 2
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_communistway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+186 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+185 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Develop The Crete
+focus = { 
+id = GRE_developthecrete
+icon = GFX_goal_generic_production
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_developathens } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+182 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+182 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Fascist Way
+focus = { 
+id = GRE_fascistway
+icon = GFX_goal_support_fascism
+x = 4
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_collectivistethos } 
+mutually_exclusive = { focus = GRE_communistway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas= fascist_influence
+remove_idea = GRE_idea_political
+ } 
+
+ } 
+
+#Focus for CAS Research
+focus = { 
+id = GRE_casresearch
+icon = GFX_goal_generic_air_fighter2
+x = 18
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_fighterresearch } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+			
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = cas_bomber
+			}
+ } 
+
+ } 
+
+#Focus for Communist Way
+focus = { 
+id = GRE_communistway
+icon = GFX_goal_support_communism
+x = 2
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_collectivistethos } 
+mutually_exclusive = { focus = GRE_fascistway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas= internationalism
+remove_idea = GRE_idea_political
+ } 
+
+ } 
+
+#Focus for Develop Athens
+focus = { 
+id = GRE_developathens
+icon = GFX_goal_generic_construct_civ_factory
+x = 10
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_industrialeffort } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+47 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Neutrality Way
+focus = { 
+id = GRE_neutralityway
+icon = GFX_focus_generic_self_management
+x = 6
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_libertyethos } 
+mutually_exclusive = { focus = GRE_democraticway } 
+ai_will_do = { 
+ factor = 7
+ } 
+completion_reward = { 
+add_stability= 0.05
+add_ideas= neutrality_idea
+remove_idea = GRE_idea_political
+ } 
+
+ } 
+
+#Focus for Why We Fight
+focus = { 
+id = GRE_IzasMSWo
+icon = GFX_goal_generic_propaganda
+x = 7
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_itDLUMSB focus = GRE_democraticdeveloppement } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas = why_we_fight_focus
+ } 
+
+ } 
+
+#Focus for Democratic Developpement
+focus = { 
+id = GRE_democraticdeveloppement
+icon = GFX_goal_generic_intelligence_exchange
+x = 8
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_democraticway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_stability= 0.15
+add_political_power= 200
+ } 
+
+ } 
+
+#Focus for Create a Fascist Militia
+focus = { 
+id = GRE_createafascistmilitia
+icon = GFX_focus_generic_little_entente
+x = 4
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_fascistway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas = GRE_idea_militia
+ } 
+
+ } 
+
+#Focus for Civilian Investement
+focus = { 
+id = GRE_civilianinvestement
+icon = GFX_goal_generic_construct_civ_factory
+x = 7
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_democraticway focus = GRE_neutralityway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+731 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Deterrence
+focus = { 
+id = GRE_itDLUMSB
+icon = GFX_goal_generic_defence
+x = 6
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_neutralityway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas= deterrence
+ } 
+
+ } 
+
+#Focus for Military Investment
+focus = { 
+id = GRE_cmwsAfQU
+icon = GFX_goal_generic_construct_mil_factory
+x = 3
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_fascistway focus = GRE_communistway } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+
+731 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Democratic Way
+focus = { 
+id = GRE_democraticway
+icon = GFX_goal_support_democracy
+x = 8
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_libertyethos } 
+mutually_exclusive = { focus = GRE_neutralityway } 
+ai_will_do = { 
+ factor = 3
+ } 
+completion_reward = { 
+add_ideas = democratic_influence
+remove_idea = GRE_idea_political
+ } 
+
+ } 
+
+#Focus for Liberty Ethos
+focus = { 
+id = GRE_libertyethos
+icon = GFX_goal_support_democracy
+x = 7
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_politicalfocus } 
+mutually_exclusive = { focus = GRE_collectivistethos } 
+ai_will_do = { 
+ factor = 8
+ } 
+completion_reward = { 
+add_stability= 0.05
+add_political_power= 75
+ } 
+
+ } 
+
+#Focus for 2nd Economic Reform
+focus = { 
+id = GRE_2ndeconomicreform
+icon = GFX_goal_generic_consumer_goods
+x = 0
+y = 1
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_economicreform } 
+ai_will_do = { 
+ factor = 8
+ } 
+available = { 
+threat > 0.15
+ } 
+completion_reward = { 
+swap_ideas = {
+remove_idea = GRE_idea_depression2
+add_idea = GRE_idea_depression3
+}
+ } 
+
+ } 
+
+#Focus for Political Focus
+focus = { 
+id = GRE_politicalfocus
+icon = GFX_goal_generic_neutrality_focus
+x = 4
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_stability= 0.05
+add_political_power = 150
+ } 
+
+ } 
+
+#Focus for Economic Reform
+focus = { 
+id = GRE_economicreform
+icon = GFX_goal_generic_positive_trade_relations
+x = 0
+y = 0
+cost = 15
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 8
+ } 
+completion_reward = { 
+swap_ideas = {
+remove_idea = GRE_idea_depression
+add_idea = GRE_idea_depression2
+}
+ } 
+
+ } 
+
+#Focus for Army Reform
+focus = { 
+id = GRE_JxADlkIb
+icon = GFX_focus_prc_infiltration
+x = 23
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_launcharecruitementprogram } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+swap_ideas = {
+remove_idea = GRE_idea_defeatturkey
+add_idea = GRE_idea_armyreform
+}
+ } 
+
+ } 
+
+#Focus for Launch a Recruitement Program
+focus = { 
+id = GRE_launcharecruitementprogram
+icon = GFX_focus_generic_military_mission
+x = 23
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_xbhpTFqY focus = GRE_doctrineeffort } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_manpower= 150000
+add_war_support= 0.15
+ } 
+
+ } 
+
+#Focus for Equipment Effort
+focus = { 
+id = GRE_xbhpTFqY
+icon = GFX_goal_generic_small_arms
+x = 22
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_armyresearch } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+ } 
+
+ } 
+
+#Focus for Army Research
+focus = { 
+id = GRE_armyresearch
+icon = GFX_goal_generic_small_arms
+x = 23
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+army_experience = 25
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = land_doctrine
+			}
+ } 
+
+ } 
+
+#Focus for Ideological Fanatism
+focus = { 
+id = GRE_ideologicalfanatism
+icon = GFX_goal_generic_demand_territory
+x = 4
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_militarism focus = GRE_politicalcommissars } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas = ideological_fanaticism_focus
+			set_rule = {
+				can_create_factions = yes
+			}
+			hidden_effect = {
+				set_rule = { can_use_kamikaze_pilots = yes }
+			}
+custom_effect_tooltip = kamikaze_focus_tooltip
+ } 
+
+ } 
+
+#Focus for Militarism
+focus = { 
+id = GRE_militarism
+icon = GFX_focus_secret_rearmament
+x = 4
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_createafascistmilitia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = militarism_focus
+army_experience = 20
+set_rule = { can_send_volunteers = yes }
+ } 
+
+ } 
+
+#Focus for Political Commissars
+focus = { 
+id = GRE_politicalcommissars
+icon = GFX_goal_generic_forceful_treaty
+x = 2
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_fiveyearplan } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas = political_commissars_focus
+ } 
+
+ } 
+
+#Focus for Aviation Developpement II
+focus = { 
+id = GRE_aviationdeveloppementii
+icon = GFX_goal_generic_build_airforce
+x = 19
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_radarconstruction focus = GRE_casresearch } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+
+					
+186 = {
+add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+}
+
+182 = {
+add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+}
+
+47 = {
+add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+}
+ } 
+
+ } 
+
+#Focus for RADAR Construction
+focus = { 
+id = GRE_radarconstruction
+icon = GFX_goal_generic_radar
+x = 20
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_antiairconstruction } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				bonus = 0.7
+				uses = 3
+				category = radar_tech
+			}
+ } 
+
+ } 
+
+#Focus for Anti Air Construction
+focus = { 
+id = GRE_antiairconstruction
+icon = GFX_goal_generic_defence
+x = 20
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_aviationdeveloppement } 
+mutually_exclusive = { focus = GRE_fighterresearch } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {			add_building_construction = {
+type = anti_air_building
+level = 2
+instant_build = yes
+}}
+
+186 = {			add_building_construction = {
+type = anti_air_building
+level = 2
+instant_build = yes
+}}
+
+182 = {			add_building_construction = {
+type = anti_air_building
+level = 2
+instant_build = yes
+}}
+ } 
+
+ } 
+
+#Focus for Fighter Research
+focus = { 
+id = GRE_fighterresearch
+icon = GFX_goal_generic_air_fighter2
+x = 18
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_aviationdeveloppement } 
+mutually_exclusive = { focus = GRE_antiairconstruction } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 0.8
+uses = 2
+technology = early_fighter
+technology = fighter1
+technology = fighter2
+technology = fighter3
+technology = heavy_fighter1
+technology = heavy_fighter2
+technology = heavy_fighter3
+}
+ } 
+
+ } 
+
+#Focus for Aviation Developpement
+focus = { 
+id = GRE_aviationdeveloppement
+icon = GFX_goal_generic_build_airforce
+x = 19
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+
+					
+186 = {
+add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+}
+ } 
+
+ } 
+
+#Focus for Destroyer Effort
+focus = { 
+id = GRE_destroyereffort
+icon = GFX_goal_generic_wolf_pack
+x = 14
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_submarineeffort } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+}
+}
+
+			add_tech_bonus = {
+
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = dd_tech
+			}
+ } 
+
+ } 
+
+#Focus for Capital Ships Effort
+focus = { 
+id = GRE_capitalshipseffort
+icon = GFX_goal_generic_navy_battleship
+x = 16
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_cruisereffort } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+47 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+}
+}
+
+
+			navy_experience = 25
+			add_tech_bonus = {
+
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+ } 
+
+ } 
+
+#Focus for Cruiser Effort
+focus = { 
+id = GRE_cruisereffort
+icon = GFX_goal_generic_navy_cruiser
+x = 16
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_heavyships } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+ } 
+
+ } 
+
+#Focus for Submarine Effort
+focus = { 
+id = GRE_submarineeffort
+icon = GFX_goal_generic_navy_submarine
+x = 14
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_smallships } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = ss_tech
+			}
+ } 
+
+ } 
+
+#Focus for Industrial Effort
+focus = { 
+id = GRE_industrialeffort
+icon = GFX_goal_generic_production
+x = 11
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus= {
+ bonus = 1 
+uses = 2 
+category = industry
+}
+ } 
+
+ } 
+
+#Focus for Develop Central Macedonia
+focus = { 
+id = GRE_developcentralmacedonia
+icon = GFX_goal_generic_construct_civ_factory
+x = 12
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_industrialeffort } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+
+731 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+731 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+
+ } 
+
+ } 
+
+#Focus for End of The Economic Reform
+focus = { 
+id = GRE_endoftheeconomicreform
+icon = GFX_goal_continuous_non_factory_construct
+x = 0
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_2ndeconomicreform } 
+ai_will_do = { 
+ factor = 8
+ } 
+available = { 
+threat > 0.25
+ } 
+completion_reward = { 
+remove_ideas = GRE_idea_depression3
+ } 
+
+ } 
+
+#Focus for Collectivist Ethos
+focus = { 
+id = GRE_collectivistethos
+icon = GFX_goal_generic_national_unity
+x = 3
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_politicalfocus } 
+mutually_exclusive = { focus = GRE_libertyethos } 
+ai_will_do = { 
+ factor = 2
+ } 
+completion_reward = { 
+add_stability= 0.05
+add_political_power= 75
+ } 
+
+ } 
+
+#Focus for Heavy Ships
+focus = { 
+id = GRE_heavyships
+icon = GFX_goal_generic_navy_battleship
+x = 16
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_navaldeveloppement } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = fleet_in_being_tree
+			}
+
+186 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Small Ships
+focus = { 
+id = GRE_smallships
+icon = GFX_goal_generic_navy_submarine
+x = 14
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_navaldeveloppement } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+completion_reward = {
+add_tech_bonus = {
+bonus = 1.0
+uses = 2
+technology = convoy_interdiction_ti
+technology = unrestricted_submarine_warfare
+technology = wolfpacks
+technology = advanced_submarine_warfare
+technology = combined_operations_raiding
+}
+}
+
+186 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = dockyard
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Doctrine Effort
+focus = { 
+id = GRE_doctrineeffort
+icon = GFX_goal_generic_army_doctrines
+x = 24
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_armyresearch } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+army_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.8
+				uses = 2
+				category = land_doctrine
+			}
+ } 
+
+ } 
+
+#Focus for Expend The Athens University
+focus = { 
+id = GRE_expendtheathensuniversity
+icon = GFX_focus_research2
+x = 11
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = GRE_developpeloponnese focus = GRE_developthecrete } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_research_slot = 1
+ } 
+
+ } 
+
+#End of focuses 
+ }

@@ -1,0 +1,960 @@
+focus_tree = {
+	id = norwegian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = NOR
+		}
+	}
+	
+	default = no
+	
+	focus = {
+		id = NOR_1936_election
+		icon = GFX_goal_norway_election
+	 	available = {
+			always = no
+		}
+		bypass = {
+			has_global_flag = NOR_1936_election_flag
+		}
+		x = 1
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = NOR_focus_bypass
+		}
+	}
+	
+	focus = {
+		id = NOR_alliance_party
+		icon = GFX_goal_norway_alliance
+	 	available = {
+			has_global_flag = NOR_1936_election_flag_alliance
+		}
+		prerequisite = { focus = NOR_1936_election }
+		x = 1
+		y = 1
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power= 150
+		}
+	}
+	
+	focus = {
+		id = NOR_alliance_military1
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = NOR_alliance_party }
+		x = 1
+		y = 2
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		}
+	}
+	
+	focus = {
+		id = NOR_alliance_reduce_unemployement
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = NOR_alliance_military1 }
+		x = 1
+		y = 3
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = NOR_unemployement
+		}
+	}
+	
+	focus = {
+		id = NOR_labour_party
+		icon = GFX_goal_norway_labour
+	 	available = {
+			has_global_flag = NOR_1936_election_flag_labor
+		}
+		prerequisite = { focus = NOR_1936_election }
+		x = -1
+		y = 1
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power= 150
+		}
+	}
+	
+	focus = {
+		id = NOR_labour_reform
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = NOR_labour_party }
+		x = -1
+		y = 2
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = NOR_labour_idea_reform
+			add_stability = 0.10
+		}
+	}
+	focus = {
+		id = NOR_labour_industrial1
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = NOR_labour_reform }
+		x = -1
+		y = 3
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		}
+	}
+	
+	focus = {
+		id = NOR_labour_economic_reform
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = NOR_labour_industrial1 }
+		x = -1
+		y = 4
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = NOR_unemployement
+				add_idea = NOR_economic_reform
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_labour_autarky_plan
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = NOR_labour_economic_reform }
+		x = -1
+		y = 5
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				add_ideas = NOR_idea_autarky_plan
+		}
+	}
+	
+	focus = {
+		id = NOR_labour_end_reform
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = NOR_labour_autarky_plan}
+		available = { 
+			threat > 0.35
+		} 
+		x = -1
+		y = 6
+		relative_position_id = NOR_1936_election
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+				remove_ideas = NOR_labour_idea_reform
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_industry
+		icon = GFX_goal_generic_production
+		x = 10
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_invest_civilian
+		icon = GFX_focus_generic_industry_1
+		prerequisite = { focus = NOR_focus_industry }
+		x = -1
+		y = 1
+		relative_position_id = NOR_focus_industry
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = {
+		id = NOR_focus_invest_civilian2
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = NOR_focus_invest_civilian }
+		x = -1
+		y = 2
+		relative_position_id = NOR_focus_industry
+		available = { 
+			threat > 0.15
+		} 
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = {
+		id = NOR_focus_invest_military
+		icon = GFX_focus_generic_industry_1
+		prerequisite = { focus = NOR_focus_industry }
+		x = 1
+		y = 1
+		relative_position_id = NOR_focus_industry
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = {
+		id = NOR_focus_invest_military2
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = NOR_focus_invest_military }
+		x = 1
+		y = 2
+		relative_position_id = NOR_focus_industry
+		available = { 
+			threat > 0.15
+		} 
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}	
+	focus = {
+		id = NOR_focus_industry_reform
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = NOR_focus_invest_civilian2 focus = NOR_focus_invest_military2 }
+		x = 0
+		y = 3
+		relative_position_id = NOR_focus_industry
+		available = { 
+			threat > 0.15
+		} 
+		cost = 20
+		ai_will_do = {
+			factor = 8
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = NOR_Industry1
+		}
+	}	
+	
+	focus = {
+		id = NOR_norwegian_army
+		icon = GFX_goal_norway_army
+		x = 6
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 8
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = NOR_fixe_manpower
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = NOR_norwegian_army }
+		x = 1
+		y = 1
+		relative_position_id = NOR_norwegian_army
+		cost = 10
+		ai_will_do = {
+			factor = 7
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower= 100000
+		}
+	}
+	focus = {
+		id = NOR_launch_recruitement
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = NOR_fixe_manpower }
+		x = 1
+		y = 2
+		relative_position_id = NOR_norwegian_army
+		available = { 
+			threat > 0.20
+		} 
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = NOR_recruitement_expansion
+		}
+	}
+	focus = {
+		id = NOR_reduce_navy
+		icon = GFX_goal_norway_reduce_navy
+		prerequisite = { focus = NOR_norwegian_army }
+		x = -1
+		y = 1
+		relative_position_id = NOR_norwegian_army
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = NOR_Navy_Prior
+				add_idea = NOR_Navy_Prior2
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_armed_neutrality
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		prerequisite = { focus = NOR_reduce_navy }
+		available = { 
+			threat > 0.20
+		} 
+		x = -1
+		y = 2
+		relative_position_id = NOR_norwegian_army
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = NOR_Neutrality
+				add_idea = NOR_Armed_Neutrality
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_land_doctrine1
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = NOR_focus_armed_neutrality focus = NOR_launch_recruitement }
+		x = 0
+		y = 3
+		relative_position_id = NOR_norwegian_army
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_navy
+		icon = GFX_goal_norway_navy
+		x = 14
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 6
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 50
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = NOR_focus_improve_dockyard
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = NOR_focus_navy }
+		x = 0
+		y = 1
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = NOR_focus_heavy_ships
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = NOR_focus_cruiser_policy }
+		x = 1
+		y = 3
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_naval_dissuasion
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = NOR_focus_heavy_ships }
+		x = 1
+		y = 4
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_cruiser_policy
+		icon = GFX_focus_generic_cruiser2
+		prerequisite = { focus = NOR_focus_improve_dockyard }
+		x = 1
+		y = 2
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_submarine_expansion
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = NOR_focus_improve_dockyard }
+		x = -1
+		y = 2
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+	focus = {
+		id = NOR_focus_destroyer_expansion
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = NOR_focus_submarine_expansion }
+		x = -1
+		y = 3
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+	focus = {
+		id = NOR_focus_convoy_policy
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = NOR_focus_destroyer_expansion }
+		x = -1
+		y = 4
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+	focus = {
+		id = NOR_focus_naval_doctrine
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = NOR_focus_convoy_policy focus = NOR_focus_naval_dissuasion }
+		x = 0
+		y = 5
+		relative_position_id = NOR_focus_navy
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_airforce
+		icon = GFX_goal_norway_air
+		x = 18
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 50
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}			
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_fighter
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = NOR_focus_airforce }
+		x = -1
+		y = 1
+		relative_position_id = NOR_focus_airforce
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_cas
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = NOR_focus_airforce }
+		x = 1
+		y = 1
+		relative_position_id = NOR_focus_airforce
+		cost = 10
+		ai_will_do = {
+			factor = 2
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = cas_bomber
+			}
+		}
+	}
+	focus = {
+		id = NOR_focus_buyfighter
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = NOR_focus_fighter focus = NOR_focus_cas }
+		x = 0
+		y = 2
+		relative_position_id = NOR_focus_airforce
+		cost = 10
+		ai_will_do = {
+			factor = 4
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_0
+				amount = 75
+				producer = ENG
+			}
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_germanywar
+		icon = GFX_focus_attack_germany
+		x = 24
+		y = 0
+		cost = 1
+	 	available = {
+			has_war_with = GER
+		}
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 10000
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_exiled
+		icon = GFX_focus_generic_home_defense
+		prerequisite = { focus = NOR_focus_germanywar }
+		x = -1
+		y = 1
+		relative_position_id = NOR_focus_germanywar
+	 	available = {
+			always = no
+		}
+		bypass = {
+			has_global_flag = NOR_flag_exiled_king
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = NOR_idea_Exiled
+		}
+	}
+	
+	focus = {
+		id = NOR_focus_stay
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = { focus = NOR_focus_germanywar }
+		x = 1
+		y = 1
+		relative_position_id = NOR_focus_germanywar
+	 	available = {
+			always = no
+		}
+		bypass = {
+			has_global_flag = NOR_flag_stay
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+	
+}

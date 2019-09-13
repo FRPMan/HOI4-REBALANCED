@@ -1,0 +1,951 @@
+focus_tree = { 
+id = finnish_focus
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = FIN 
+} 
+} 
+#Focus for Modernize The Country
+focus = { 
+id = FIN_modernizethecountry
+icon = GFX_goal_generic_construct_infrastructure
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_developthecountryside } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+111 = {
+add_building_construction = {
+type = infrastructure
+level = 2
+instant_build = yes
+}
+}
+111 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+150 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Join The Axis
+focus = { 
+id = FIN_jointheaxis
+icon = GFX_focus_chi_mission_to_germany
+x = 2
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_militaryinvestment } 
+ai_will_do = { 
+ factor = 5
+ } 
+bypass = { 
+is_in_faction= yes
+ } 
+available = { 
+has_government= fascism
+GER = { country_event = { days = 1 id = hoirebalancedfrp.4 } }
+ } 
+completion_reward = { 
+GER = { country_event = { days = 1 id = generic.2 } }
+ } 
+
+ } 
+
+#Focus for Austerity Plan
+focus = { 
+id = FIN_austerityplan
+icon = GFX_goal_generic_forceful_treaty
+x = 6
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_whywefight } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas= FIN_idea_austerity
+ } 
+
+ } 
+
+#Focus for Encourage Nationalism
+focus = { 
+id = FIN_encouragenationalism
+icon = GFX_goal_support_fascism
+x = 2
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_consolidatethenation } 
+mutually_exclusive = { focus = FIN_positionwiththeallies }mutually_exclusive = { focus = FIN_stayneutral }mutually_exclusive = { focus = FIN_ focus = FIN_encouragecommunism }ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_popularity= { 
+ideology = fascism 
+popularity = 0.15 
+}
+add_political_power= 150
+add_stability= 0.05
+add_ideas= fascist_influence
+ } 
+
+ } 
+
+#Focus for Position With The Allies
+focus = { 
+id = FIN_positionwiththeallies
+icon = GFX_goal_support_democracy
+x = 4
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_consolidatethenation } 
+mutually_exclusive = { focus = FIN_stayneutral } 
+mutually_exclusive = { focus = FIN_encouragenationalism } 
+mutually_exclusive = { focus = FIN_encouragecommunism } 
+ai_will_do = { 
+ factor = 3
+ } 
+completion_reward = { 
+add_political_power= 150
+add_stability= 0.05
+ } 
+
+ } 
+
+#Focus for Consolidate The Nation
+focus = { 
+id = FIN_consolidatethenation
+icon = GFX_focus_hol_the_foundations_of_defense
+x = 3
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 10
+ } 
+completion_reward = { 
+add_political_power= 150
+add_stability= 0.05
+ } 
+
+ } 
+
+#Focus for Winter War
+focus = { 
+id = FIN_winterwar
+icon = GFX_focus_attack_soviet
+x = 23
+y = 0
+cost = 1
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 10
+ } 
+available = { 
+has_defensive_war_with= SOV
+ } 
+completion_reward = { 
+add_manpower = 25000
+add_timed_idea = { idea = FIN_idea_winterwar days = 180 }
+ } 
+
+ } 
+
+#Focus for Stay Neutral
+focus = { 
+id = FIN_stayneutral
+icon = GFX_goal_generic_neutrality_focus
+x = 6
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_consolidatethenation } 
+mutually_exclusive = { focus = FIN_positionwiththeallies } 
+mutually_exclusive = { focus = FIN_encouragenationalism } 
+mutually_exclusive = { focus = FIN_encouragecommunism } 
+ai_will_do = { 
+ factor = 7
+ } 
+completion_reward = { 
+add_political_power= 150
+add_stability= 0.05
+add_ideas= neutrality_idea
+ } 
+
+ } 
+
+#Focus for Deterrence
+focus = { 
+id = FIN_deterrence
+icon = GFX_goal_generic_defence
+x = 17
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_militarizedthecivilians } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas= deterrence
+ } 
+
+ } 
+
+#Focus for Militarized The Civilians
+focus = { 
+id = FIN_militarizedthecivilians
+icon = GFX_focus_generic_little_entente
+x = 17
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_armyreform } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas= militarism_focus
+ } 
+
+ } 
+
+#Focus for Recruit Foreigns Volunteers
+focus = { 
+id = FIN_recruitforeignsvolunteers
+icon = GFX_focus_generic_military_mission
+x = 15
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_armyreform } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_manpower= 25000
+ } 
+
+ } 
+
+#Focus for Industrial Research
+focus = { 
+id = FIN_industrialresearch
+icon = GFX_goal_generic_production
+x = 11
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus= {
+ bonus = 1 
+uses = 2 
+category = industry
+}
+ } 
+
+ } 
+
+#Focus for Army Reform
+focus = { 
+id = FIN_armyreform
+icon = GFX_goal_generic_small_arms
+x = 17
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+army_experience = 15
+add_tech_bonus = { bonus = 1.0 uses = 2 category = land_doctrine }
+ } 
+
+ } 
+
+#Focus for Develop Helsinki
+focus = { 
+id = FIN_develophelsinki
+icon = GFX_goal_generic_production
+x = 11
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_industrialresearch } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+111 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Continue The Developpement of Helsinki
+focus = { 
+id = FIN_continuethedeveloppementofhelsinki
+icon = GFX_goal_generic_construct_civ_factory
+x = 8
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_develophelsinki } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+111 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+ type = industrial_complex
+ level = 2
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Military Developpement in Helsinki
+focus = { 
+id = FIN_militarydeveloppementinhelsinki
+icon = GFX_goal_generic_construct_mil_factory
+x = 12
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_develophelsinki } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+111 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Develop The Countryside
+focus = { 
+id = FIN_developthecountryside
+icon = GFX_goal_generic_construct_civilian
+x = 10
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_develophelsinki } 
+ai_will_do = { 
+ factor = 4
+ } 
+completion_reward = { 
+149 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+150 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Demand Help From Germans
+focus = { 
+id = FIN_demandhelpfromgermans
+icon = GFX_focus_chi_mission_to_germany
+x = 23
+y = 1
+cost = 5
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_winterwar } 
+ai_will_do = { 
+ factor = 8
+ } 
+available = { 
+has_war_with= GER
+ } 
+completion_reward = { 
+GER = { country_event = { days = 1 id = hoirebalancedfrp.1 } }
+ } 
+
+ } 
+
+#Focus for Develop The Helsinki University
+focus = { 
+id = FIN_developthehelsinkiuniversity
+icon = GFX_focus_research2
+x = 11
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_modernizethecountry focus = FIN_2ndmilitarydeveloppement } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_research_slot = 1
+ } 
+
+ } 
+
+#Focus for Encourage Communism
+focus = { 
+id = FIN_encouragecommunism
+icon = GFX_focus_generic_join_comintern
+x = 0
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_consolidatethenation } 
+mutually_exclusive = { focus = FIN_encouragenationalism focus = FIN_positionwiththeallies focus = FIN_stayneutral focus = FIN_ }ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power= 150
+add_stability= 0.05
+add_ideas= internationalism
+ } 
+
+ } 
+
+#Focus for Militarized The Youth
+focus = { 
+id = FIN_militarizedtheyouth
+icon = GFX_focus_generic_military_academy
+x = 2
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_encouragenationalism } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas= military_youth_focus
+ } 
+
+ } 
+
+#Focus for Join The Allies
+focus = { 
+id = FIN_jointheallies
+icon = GFX_focus_chi_british_cooperation
+x = 4
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_positionwiththeallies } 
+ai_will_do = { 
+ factor = 8
+ } 
+bypass = { 
+is_in_faction= yes
+ } 
+completion_reward = { 
+ENG = { country_event = { days = 1 id = generic.2 } }
+ } 
+
+ } 
+
+#Focus for 2nd Finnish Civil War
+focus = { 
+id = FIN_2ndfinnishcivilwar
+icon = GFX_goal_generic_occupy_states_ongoing_war
+x = 0
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_continuetheexpropriations } 
+ai_will_do = { 
+ factor = 4
+ } 
+completion_reward = { 
+news_event = { id = hoirebalancedfrp.4 hours = 5 }
+
+custom_effect_tooltip  = FIN_focus_civilwar
+hidden_effect = {
+
+remove_ideas= FIN_anticommunist
+
+add_popularity = { 
+ideology = communism 
+popularity = 0.5 
+}
+
+set_politics = {
+ruling_party = communism
+elections_allowed = no
+}
+
+start_civil_war= {
+ ideology = neutrality
+size = 0.4 
+}
+}
+ } 
+
+ } 
+
+#Focus for Start The Expropriations
+focus = { 
+id = FIN_starttheexpropriations
+icon = GFX_goal_generic_soviet_construction
+x = 0
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_encouragecommunism } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas = FIN_expropriation1
+ } 
+
+ } 
+
+#Focus for Civillian Investment
+focus = { 
+id = FIN_civillianinvestment
+icon = GFX_goal_generic_construct_civ_factory
+x = 5
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_positionwiththeallies focus = FIN_stayneutral } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+149 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+111 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Military Investment
+focus = { 
+id = FIN_militaryinvestment
+icon = GFX_goal_generic_construct_mil_factory
+x = 2
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_militarizedtheyouth } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+149 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+
+111 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+ type = arms_factory
+ level = 2
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Join The Comintern
+focus = { 
+id = FIN_jointhecomintern
+icon = GFX_focus_chi_mission_to_the_soviet_union
+x = 0
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_2ndfinnishcivilwar } 
+ai_will_do = { 
+ factor = 5
+ } 
+bypass = { 
+is_in_faction= yes
+ } 
+available = { 
+has_civil_war= no
+ } 
+completion_reward = { 
+SOV = { country_event = { days = 1 id = generic.2 } }
+ } 
+
+ } 
+
+#Focus for Continue The Expropriations
+focus = { 
+id = FIN_continuetheexpropriations
+icon = GFX_focus_prc_agrarian_socialism
+x = 0
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_starttheexpropriations } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_stability = -0.1
+add_popularity = { ideology = communism popularity = 0.3 }
+swap_ideas = {
+remove_idea = FIN_expropriation1
+add_idea = FIN_expropriation2
+}
+ } 
+
+ } 
+
+#Focus for Air Focus
+focus = { 
+id = FIN_airfocus
+icon = GFX_goal_generic_build_airforce
+x = 20
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 3
+ } 
+completion_reward = { 
+air_experience = 15
+add_tech_bonus = { bonus = 1.0 uses = 2 category = air_doctrine }
+ } 
+
+ } 
+
+#Focus for Fighter Research Focus
+focus = { 
+id = FIN_fighterresearchfocus
+icon = GFX_goal_generic_air_fighter2
+x = 19
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_airfocus } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 0.8
+uses = 2
+technology = early_fighter
+technology = fighter1
+technology = fighter2
+technology = fighter3
+technology = heavy_fighter1
+technology = heavy_fighter2
+technology = heavy_fighter3
+}
+ } 
+
+ } 
+
+#Focus for Anti Air Focus
+focus = { 
+id = FIN_antiairfocus
+icon = GFX_goal_generic_air_production
+x = 21
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_airfocus } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+111 = {			add_building_construction = {
+type = anti_air_building
+level = 5
+instant_build = yes
+}}
+
+149 = {			add_building_construction = {
+type = anti_air_building
+level = 2
+instant_build = yes
+}}
+ } 
+
+ } 
+
+#Focus for Equipment Effort
+focus = { 
+id = FIN_equipmenteffort
+icon = GFX_goal_generic_small_arms
+x = 17
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_deterrence } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 1.0
+uses = 2
+category = infantry_weapons
+category = artillery
+}
+ } 
+
+ } 
+
+#Focus for Continue The Army Reform
+focus = { 
+id = FIN_continuethearmyreform
+icon = GFX_goal_generic_army_doctrines
+x = 15
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_deterrence } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+army_experience = 50
+add_tech_bonus = { bonus = 1.0 uses = 2 category = land_doctrine }
+ } 
+
+ } 
+
+#Focus for Why We Fight
+focus = { 
+id = FIN_whywefight
+icon = GFX_goal_generic_propaganda
+x = 6
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_stayneutral } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas = why_we_fight_focus
+ } 
+
+ } 
+
+#Focus for Air Focus II
+focus = { 
+id = FIN_airfocusii
+icon = GFX_goal_generic_build_airforce
+x = 20
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_airfocus } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+air_experience = 50
+add_tech_bonus = { bonus = 1.0 uses = 2 category = air_doctrine }
+ } 
+
+ } 
+
+#Focus for 2nd Industrial Research
+focus = { 
+id = FIN_2ndindustrialresearch
+icon = GFX_goal_generic_production
+x = 14
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_develophelsinki } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus= {
+ bonus = 1 
+uses = 2 
+category = industry
+}
+ } 
+
+ } 
+
+#Focus for 2nd Military Developpement
+focus = { 
+id = FIN_2ndmilitarydeveloppement
+icon = GFX_goal_generic_construct_mil_factory
+x = 12
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_militarydeveloppementinhelsinki } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+111 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+ type = arms_factory
+ level = 2
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for 2nd Civillian Investment
+focus = { 
+id = FIN_2ndcivillianinvestment
+icon = GFX_goal_generic_construct_civ_factory
+x = 4
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_austerityplan focus = FIN_jointheallies } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+149 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+111 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Recruit More Soldier
+focus = { 
+id = FIN_recruitmoresoldier
+icon = GFX_focus_chi_army_reform
+x = 16
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_continuethearmyreform focus = FIN_equipmenteffort } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_war_support= 0.05
+add_manpower= 250000
+ } 
+
+ } 
+
+#Focus for 2nd Equipment Effort
+focus = { 
+id = FIN_2ndequipmenteffort
+icon = GFX_goal_generic_small_arms
+x = 16
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = FIN_recruitmoresoldier } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 1.0
+uses = 2
+category = infantry_weapons
+category = artillery
+}
+ } 
+
+ } 
+
+#End of focuses 
+ }

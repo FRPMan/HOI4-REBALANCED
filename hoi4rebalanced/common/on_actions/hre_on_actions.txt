@@ -1,0 +1,16 @@
+on_actions = {	
+on_startup = {
+		effect = {
+		if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+			#British Iran oil concessions
+				PER = {
+					give_resource_rights = { receiver = ENG state = 413 }
+				}
+			}
+			}
+			
+}
+}

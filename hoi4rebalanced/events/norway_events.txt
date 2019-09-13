@@ -1,0 +1,186 @@
+add_namespace = norway
+
+country_event = {
+	id = norway.1
+	title = norway_election.1936.title	# Democratic Australia proposes to govern Singapore/Borneo colonies.
+	desc = norway_election.1936.desc	#
+	picture = GFX_report_event_worker_protests
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = NOR_1936_election_flag }
+		tag = NOR
+		NOT = { has_government = fascism }
+		NOT = { has_government = communism }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = norway_election.1936.a
+		ai_chance = { factor = 8 }
+		
+		custom_effect_tooltip = NOR_1936_election_tooltip_1
+		
+		
+		swap_ideas = {
+			remove_idea = NOR_very_high_support
+			add_idea = NOR_very_high_support
+		}
+		hidden_effect = {
+			set_politics = {
+
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			
+			add_popularity = {
+				ideology = democracy
+				popularity = 0.3
+			}
+		set_global_flag = NOR_1936_election_flag
+		set_global_flag = NOR_1936_election_flag_labor
+		}
+	}
+	
+	option = {
+		name = norway_election.1936.d
+		
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = NOR_1936_election_tooltip_4
+		
+		
+		swap_ideas = {
+			remove_idea = NOR_very_high_support
+			add_idea = NOR_medium_support
+		}
+		hidden_effect = {
+			set_politics = {
+
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+		add_popularity = {
+				ideology = democracy
+				popularity = 0.3
+			}
+		set_global_flag = NOR_1936_election_flag
+		set_global_flag = NOR_1936_election_flag_alliance
+		
+		}
+		
+	}
+	
+	option = {
+		name = norway_election.1936.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = NOR_1936_election_tooltip_2
+		
+		
+		swap_ideas = {
+			remove_idea = NOR_very_high_support
+			add_idea = NOR_high_support
+		}
+		hidden_effect = {
+		add_popularity = {
+				ideology = fascism
+				popularity = 0.4
+			}
+		set_global_flag = NOR_1936_election_flag
+		}
+		
+	}
+	
+	option = {
+		name = norway_election.1936.c
+		
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = NOR_1936_election_tooltip_3
+		
+		
+		swap_ideas = {
+			remove_idea = NOR_very_high_support
+			add_idea = NOR_bad_support
+		}
+		hidden_effect = {
+		add_popularity = {
+				ideology = communism
+				popularity = 0.4
+			}
+		set_global_flag = NOR_1936_election_flag
+		}
+		
+	}
+}
+
+country_event = {
+	id = norway.2
+	title = norway_capitulation.1.title	
+	desc = norway_capitulation.1.desc	
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	
+	trigger = {
+		has_war_with = GER
+		tag = NOR
+		NOT = { is_subject = true }
+		is_in_faction_with = ENG
+		NOT = { controls_state = 110 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = norway_capitulation.1.a
+		ai_chance = { factor = 10 }
+		
+		custom_effect_tooltip = NOR_capitulation1_tooltip_1
+		
+		add_stability = -0.1
+		
+		hidden_effect = {
+			
+		set_global_flag = NOR_flag_exiled_king
+		}
+	}
+	
+	option = {
+		name = norway_capitulation.1.b
+		
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = NOR_capitulation1_tooltip_2
+		
+		GER = { puppet = NOR }
+		NOR = {
+		transfer_state = 110
+		transfer_state = 142
+		transfer_state = 143
+		transfer_state = 144
+		}		
+		hidden_effect = {
+		set_global_flag = NOR_flag_stay
+
+		
+		}
+		
+	}
+	
+}

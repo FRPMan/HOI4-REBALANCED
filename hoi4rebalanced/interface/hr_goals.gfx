@@ -1,0 +1,6 @@
+spriteTypes = {	
+	SpriteType = {
+	name = "GFX_focus_charles_de_gaulle"
+	texturefile = "gfx/leaders/FRA/focus_charles_de_gaulle.dds"		
+	}
+}

@@ -1,0 +1,47 @@
+spriteTypes = { 
+	SpriteType = {
+		name = "GFX_goal_norway_election"
+		texturefile = "gfx/interface/goals/goal_norway_election.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_norway_labour"
+		texturefile = "gfx/interface/goals/goal_norway_labour.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_norway_army"
+		texturefile = "gfx/interface/goals/goal_norway_army.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_norway_reduce_navy"
+		texturefile = "gfx/interface/goals/goal_norway_reduce_navy.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_norway_navy"
+		texturefile = "gfx/interface/goals/goal_norway_navy.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_norway_air"
+		texturefile = "gfx/interface/goals/goal_norway_air.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_norway_alliance"
+		texturefile = "gfx/interface/goals/goal_norway_alliance.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_nor_factory"
+		texturefile = "gfx/interface/ideas/idea_nor_factory.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_nor_support"
+		texturefile = "gfx/interface/ideas/idea_nor_parliament.dds"			
+	}
+	
+ }

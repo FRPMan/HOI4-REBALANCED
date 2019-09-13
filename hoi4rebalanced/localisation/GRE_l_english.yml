@@ -1,0 +1,81 @@
+l_english:
+
+ GRE_idea_defeatturkey:0 "Defeated by Turkey"
+ GRE_idea_defeatturkey_desc:0 "We have been defeated by Turkey."
+
+ GRE_idea_depression:0 "Great Depression"
+ GRE_idea_depression_desc:0 "We suffer the consequences of the Great Depression."
+ GRE_idea_depression2:0 "Recovery of the Great Depression"
+ GRE_idea_depression2_desc:0 "We always suffer the consequences of the Great Depression but now, it's better."
+ GRE_idea_depression3:0 "Slow Economy"
+ GRE_idea_depression3_desc:0 "We have a slow economy."
+ 
+ GRE_idea_divided:0 "Divided Nation"
+ GRE_idea_divided_desc:0 "We have a lot of trouble because of this."
+ GRE_idea_political:0 "Political Crisis"
+ GRE_idea_political_desc:0 "We have a political crisis."
+ 
+ GRE_idea_militia:0 "Fascist Militia"
+ GRE_idea_militia_desc:0 "We have a fascist militia."
+ GRE_idea_armyreform:0 "Army Reformed"
+ GRE_idea_armyreform_desc:0 "The Army has been reformed."
+ 
+ BUL_idea_political_crisis:0 "Political Crisis"
+ BUL_idea_political_crisis_desc:0 "Bulgaria need to find a political direction."
+ BUL_idea_depression:0 "Great Depression"
+ BUL_idea_depression_desc:0 "We suffer the consequences of the Great Depression."
+ BUL_idea_depression2:0 "Great Depression"
+ BUL_idea_depression2_desc:0 "We suffer the consequences of the Great Depression."
+ BUL_idea_depression3:0 "Great Depression"
+ BUL_idea_depression3_desc:0 "We suffer the consequences of the Great Depression."
+ BUL_idea_militia:0 "Fascist Militia"
+ BUL_idea_militia_desc:0 "We have a fascist militia"
+ BUL_idea_greatwar:0 "Defeated in the Great War"
+ BUL_idea_greatwar_desc:0 "We have been defeated by the Entente in 1918."
+ BUL_idea_greatwar2:0 "Defeated in the Great War"
+ BUL_idea_greatwar2_desc:0 "We have been defeated by the Entente in 1918."
+ BUL_idea_greatwar3:0 "Defeated in the Great War"
+ BUL_idea_greatwar3_desc:0 "We have been defeated by the Entente in 1918."
+ BUL_idea_badarmy:0 "Treaty of Neuilly"
+ BUL_idea_badarmy_desc:0 "Since the Great War, we suffer the conditions of the treaty of Neuilly."
+ 
+ BUL_focus_1: "The USSR will invest in our economy."
+ BUL_focus_2: "We will improve our relations with the USSR."
+ BUL_focus_3: "We will begin the Army Reform."
+ BUL_focus_4: "We will construct some Factories in exchange of the state of Thrace."
+ BUL_focus_5: "We will finish the Army Reform."
+ BUL_focus_german: "We will strengthen the German Influence on Bulgaria."
+ BUL_focus_soviet: "We will strengthen the Soviet Influence on Bulgaria."
+ FIN_focus_civilwar: "A civil war will be launched."
+ 
+ FIN_idea_winterwar:0 "Winter War"
+ FIN_idea_winterwar_desc:0 "The soviets are attacking us and we will defend."
+ 
+ FIN_anticommunist:0 "Anti Communism"
+  FIN_anticommunist_desc:0 "The Finnish don't like communism."
+ 
+ FIN_expropriation1:0 "Expropriations"
+  FIN_expropriationu_desc:0 "We expropriate the owners to serve our country."
+ 
+ FIN_expropriation2:0 "Effective Expropriations"
+  FIN_expropriation2_desc:0 "We expropriate the owners to serve our country."
+  
+ FIN_idea_austerity:0 "Austerity Plan"
+  FIN_idea_austerity_desc:0 "We have to make an austerity plan to counter any threat."
+  
+ FRA_free_france:0 "Free France"
+ FRA_free_france_desc:0 "We are the Free France lead by Charles de Gaulle and we continue the fight."
+ 
+ FRA_united:0 "United"
+ FRA_united_desc:0 "The Colonies are now united to fight the Germans."
+ 
+ 
+ FRA_appeldu18juin:0 "Appel du 18 Juin"
+FRA_appeldu18juin_desc:0 "Appel du 18 Juin"
+FRA_lessonsofwar:0 "Lessons of War"
+FRA_lessonsofwar_desc:0 "Lessons of War"
+FRA_retakefrenchsyria:0 "Develop Gabon"
+FRA_retakefrenchsyria_desc:0 "Develop Gabon"
+FRA_unitethecolony:0 "Unite The Colony"
+FRA_unitethecolony_desc:0 "Unite The Colony"
+FRA_focus_1: "We will build some factories in Gabon"

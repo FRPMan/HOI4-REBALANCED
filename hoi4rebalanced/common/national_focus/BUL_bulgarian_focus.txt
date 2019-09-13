@@ -1,0 +1,1279 @@
+focus_tree = { 
+id = bulgarian_focus
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = BUL 
+} 
+} 
+continuous_focus_position = { x = 100 y = 1500 }
+#Focus for Land Tax Effort
+focus = { 
+id = BUL_landtaxeffort
+icon = GFX_focus_generic_industry_3
+x = 14
+y = 3
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_unemployementeffort } 
+ai_will_do = { 
+ factor = 5
+ } 
+available = { 
+threat > 0.45
+ } 
+completion_reward = { 
+remove_ideas = BUL_idea_depression3
+ } 
+
+ } 
+
+#Focus for Non-Aligned Tsar
+focus = { 
+id = BUL_nonalignedtsar
+icon = GFX_goal_generic_neutrality_focus
+x = 6
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_keepthetsar } 
+mutually_exclusive = { focus = BUL_nationalisttsar } 
+ai_will_do = { 
+ factor = 2
+ } 
+completion_reward = { 
+add_ideas= neutrality_idea
+add_ideas= neutrality_influence
+add_stability= 0.1
+ } 
+
+ } 
+
+#Focus for Strengthen The Soviet Influence
+focus = { 
+id = BUL_strengthenthesovietinfluence
+icon = GFX_focus_prc_agrarian_socialism
+x = 15
+y = 4
+cost = 10
+available_if_capitulated = yes 
+mutually_exclusive = { focus = BUL_strengthenthegermaninfluence } 
+ai_will_do = { 
+ factor = 2
+ } 
+completion_reward = { 
+custom_effect_tooltip  = BUL_focus_soviet
+ } 
+
+ } 
+
+#Focus for Strengthen The German Influence
+focus = { 
+id = BUL_strengthenthegermaninfluence
+icon = GFX_focus_ger_oppose_hitler
+x = 13
+y = 4
+cost = 10
+available_if_capitulated = yes 
+mutually_exclusive = { focus = BUL_strengthenthesovietinfluence } 
+ai_will_do = { 
+ factor = 8
+ } 
+completion_reward = { 
+custom_effect_tooltip  = BUL_focus_german
+ } 
+
+ } 
+
+#Focus for Keep The Tsar
+focus = { 
+id = BUL_keepthetsar
+icon = GFX_focus_generic_treaty
+x = 5
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_bulgarianpolitics } 
+mutually_exclusive = { focus = BUL_nomoretsar } 
+ai_will_do = { 
+ factor = 7
+ } 
+completion_reward = { 
+add_stability= 0.05
+ } 
+
+ } 
+
+#Focus for Nationalist Tsar
+focus = { 
+id = BUL_nationalisttsar
+icon = GFX_goal_support_fascism
+x = 4
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_keepthetsar } 
+mutually_exclusive = { focus = BUL_nonalignedtsar } 
+ai_will_do = { 
+ factor = 8
+ } 
+completion_reward = { 
+news_event = { id = hoirebalancedfrp.6 } 
+add_ideas= nationalism
+add_popularity= { 
+ideology = fascism 
+popularity = 0.1 
+}
+ } 
+
+ } 
+
+#Focus for Resolve the Political Crisis
+focus = { 
+id = BUL_resolvethepoliticalcrisis
+icon = GFX_goal_tripartite_pact
+x = 3
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nomoretsar focus = BUL_keepthetsar } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+remove_ideas= BUL_idea_political_crisis
+ } 
+
+ } 
+
+#Focus for Democratic Bulgaria
+focus = { 
+id = BUL_democraticbulgaria
+icon = GFX_goal_support_democracy
+x = 2
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nomoretsar } 
+mutually_exclusive = { focus = BUL_communistbulgaria } 
+ai_will_do = { 
+ factor = 4
+ } 
+completion_reward = { 
+add_ideas = democratic_influence
+add_stability= 0.05
+ } 
+
+ } 
+
+#Focus for Communist Bulgaria
+focus = { 
+id = BUL_communistbulgaria
+icon = GFX_goal_support_communism
+x = 0
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nomoretsar } 
+mutually_exclusive = { focus = BUL_democraticbulgaria } 
+ai_will_do = { 
+ factor = 6
+ } 
+completion_reward = { 
+news_event = { id = hoirebalancedfrp.7 }
+add_ideas= communist_influence
+add_stability= -0.1
+ } 
+
+ } 
+
+#Focus for Non-Aligned Balkan Faction
+focus = { 
+id = BUL_nonalignedbalkanfaction
+icon = GFX_goal_generic_defence
+x = 6
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nonalignedtsar } 
+mutually_exclusive = { focus = BUL_isolationism } 
+ai_will_do = { 
+ factor = 2
+ } 
+available = { 
+is_in_faction= no
+ } 
+completion_reward = { 
+set_rule = { can_create_factions = yes }
+create_faction = "Balkan Faction"
+ } 
+
+ } 
+
+#Focus for Invite Greece
+focus = { 
+id = BUL_invitegreece
+icon = GFX_goal_generic_alliance
+x = 6
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nonalignedbalkanfaction } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+GRE = { country_event = { days = 1 id = generic.5 } }
+ } 
+
+ } 
+
+#Focus for Invite Turkey
+focus = { 
+id = BUL_inviteturkey
+icon = GFX_goal_generic_alliance
+x = 8
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nonalignedbalkanfaction } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+TUR = { country_event = { days = 1 id = generic.5 } }
+ } 
+
+ } 
+
+#Focus for Isolationism
+focus = { 
+id = BUL_isolationism
+icon = GFX_focus_generic_self_management
+x = 10
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nonalignedtsar } 
+mutually_exclusive = { focus = BUL_nonalignedbalkanfaction } 
+ai_will_do = { 
+ factor = 8
+ } 
+completion_reward = { 
+add_political_power= 150
+add_stability= 0.05
+ } 
+
+ } 
+
+#Focus for Civillian Investment
+focus = { 
+id = BUL_MQtxZVHp
+icon = GFX_goal_generic_construct_civ_factory
+x = 10
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_isolationism focus = BUL_invitegreece focus = BUL_inviteturkey } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+48 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+212 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Demand Thrace
+focus = { 
+id = BUL_demandthrace
+icon = GFX_focus_hol_the_foundations_of_defense
+x = 7
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_invitegreece focus = BUL_inviteturkey } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+custom_effect_tooltip  = BUL_focus_4
+GRE = { country_event = { days = 1 id = hoirebalancedfrp.8 } }
+ } 
+
+ } 
+
+#Focus for Take Macedonia
+focus = { 
+id = BUL_takemacedonia
+icon = GFX_goal_rhineland
+x = 7
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_MQtxZVHp focus = BUL_demandthrace } 
+ai_will_do = { 
+ factor = 5
+ } 
+bypass = { 
+106 = { is_owned_by= BUL }
+ } 
+completion_reward = { 
+create_wargoal = {
+type = take_state_focus
+target = YUG
+generator = { 106 }
+}
+ } 
+
+ } 
+
+#Focus for Create a Fascist Militia
+focus = { 
+id = BUL_PGdKehWO
+icon = GFX_goal_rhineland
+x = 4
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_nationalisttsar } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_ideas= BUL_idea_militia
+add_popularity= { ideology = fascism popularity = 0.2 }
+ } 
+
+ } 
+
+#Focus for Stops the Great War Humiliation
+focus = { 
+id = BUL_stopsthegreatwarhumiliation
+icon = GFX_focus_chi_army_reform
+x = 4
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_PGdKehWO } 
+ai_will_do = { 
+ factor = 5
+ } 
+available = { 
+has_government = fascism
+ } 
+completion_reward = { 
+add_ideas = BUL_idea_nogreatwar
+add_political_power= 150
+add_war_support= 0.2
+ } 
+
+ } 
+
+#Focus for Military Industry Effort
+focus = { 
+id = BUL_militaryindustryeffort
+icon = GFX_goal_generic_construct_mil_factory
+x = 4
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_stopsthegreatwarhumiliation } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+48 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+
+211 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Economic Reform
+focus = { 
+id = BUL_gTtkshNf
+icon = GFX_focus_generic_industry_1
+x = 14
+y = 1
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_industryfocus } 
+ai_will_do = { 
+ factor = 8
+ } 
+available = { 
+threat > 0.10
+ } 
+completion_reward = { 
+swap_ideas = {
+remove_idea = BUL_idea_depression
+add_idea = BUL_idea_depression2
+}
+ } 
+
+ } 
+
+#Focus for Unemployement Effort
+focus = { 
+id = BUL_unemployementeffort
+icon = GFX_focus_generic_industry_2
+x = 14
+y = 2
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_gTtkshNf } 
+ai_will_do = { 
+ factor = 5
+ } 
+available = { 
+threat > 0.25
+ } 
+completion_reward = { 
+swap_ideas = {
+remove_idea = BUL_idea_depression2
+add_idea = BUL_idea_depression3
+}
+ } 
+
+ } 
+
+#Focus for Sofia Developpement
+focus = { 
+id = BUL_sofiadeveloppement
+icon = GFX_goal_generic_construct_civ_factory
+x = 12
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_industryfocus } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+48 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Sofia Developpement II
+focus = { 
+id = BUL_sofiadeveloppementii
+icon = GFX_goal_generic_construct_mil_factory
+x = 12
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_sofiadeveloppement } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+48 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Extend The Sofia University
+focus = { 
+id = BUL_extendthesofiauniversity
+icon = GFX_focus_research2
+x = 12
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_sofiadeveloppementii } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_research_slot = 1
+ } 
+
+ } 
+
+#Focus for Plovdiv Developpement
+focus = { 
+id = BUL_plovdivdeveloppement
+icon = GFX_goal_generic_construction2
+x = 16
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_industryfocus } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+212 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Develop the Varna Port
+focus = { 
+id = BUL_developthevarnaport
+icon = GFX_goal_generic_construct_naval_dockyard
+x = 16
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_plovdivdeveloppement } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+211 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+ type = dockyard
+ level = 2
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Burgas Developpement
+focus = { 
+id = BUL_burgasdeveloppement
+icon = GFX_goal_generic_construct_civilian
+x = 16
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_developthevarnaport } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+211 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+211 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Rapprochement With The USSR
+focus = { 
+id = BUL_rapprochementwiththeussr
+icon = GFX_focus_chi_mission_to_the_soviet_union
+x = 0
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_communistbulgaria } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+custom_effect_tooltip  = BUL_focus_2
+ } 
+
+ } 
+
+#Focus for Army Reform
+focus = { 
+id = BUL_XEDdwTca
+icon = GFX_focus_generic_military_mission
+x = 24
+y = 2
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_ilJfrEKc } 
+ai_will_do = { 
+ factor = 5
+ } 
+available = { 
+threat > 0.10
+ } 
+completion_reward = { 
+custom_effect_tooltip  = BUL_focus_3
+
+hidden_effect = {
+remove_ideas = BUL_idea_greatwar
+remove_ideas = BUL_idea_greatwar3
+add_ideas = BUL_idea_greatwar2
+}
+ } 
+
+ } 
+
+#Focus for Equipment Effort
+focus = { 
+id = BUL_IOyFLGAj
+icon = GFX_goal_generic_small_arms
+x = 20
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_prepareforthesecondgreatwar } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+ } 
+
+ } 
+
+#Focus for Prepare For The Second Great War
+focus = { 
+id = BUL_prepareforthesecondgreatwar
+icon = GFX_goal_generic_defence
+x = 22
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+ } 
+
+ } 
+
+#Focus for Armor Effort
+focus = { 
+id = BUL_armoreffort
+icon = GFX_goal_generic_army_tanks
+x = 19
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_IOyFLGAj } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+ } 
+
+ } 
+
+#Focus for Doctrine Effort
+focus = { 
+id = BUL_qbtDrTsY
+icon = GFX_goal_generic_position_armies
+x = 21
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_IOyFLGAj } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+ } 
+
+ } 
+
+#Focus for Equipment Effort II
+focus = { 
+id = BUL_equipmenteffortii
+icon = GFX_goal_generic_small_arms
+x = 20
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_armoreffort focus = BUL_qbtDrTsY } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+ } 
+
+ } 
+
+#Focus for Launch a Recruitement Program
+focus = { 
+id = BUL_ilJfrEKc
+icon = GFX_focus_generic_little_entente
+x = 24
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_prepareforthesecondgreatwar } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_manpower= 250000
+ } 
+
+ } 
+
+#Focus for Buy French Fighters
+focus = { 
+id = BUL_buyfrenchfighters
+icon = GFX_focus_chi_reach_out_to_france
+x = 28
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_fighterfocus focus = BUL_casfocus } 
+mutually_exclusive = { focus = BUL_buyamericanfighters } 
+mutually_exclusive = { focus = BUL_buysovietfighters } 
+mutually_exclusive = { focus = BUL_buygermanfighters } 
+mutually_exclusive = { focus = BUL_buybritishfighters } 
+mutually_exclusive = { focus = BUL_ } 
+ai_will_do = { 
+ factor = 2
+ } 
+completion_reward = { 
+add_equipment_to_stockpile = {
+ type = fighter_equipment_1
+ amount = 75
+ producer = FRA
+}
+ } 
+
+ } 
+
+#Focus for Buy American Fighters
+focus = { 
+id = BUL_buyamericanfighters
+icon = GFX_focus_chi_mission_to_the_us
+x = 30
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_fighterfocus focus = BUL_casfocus } 
+mutually_exclusive = { focus = BUL_buyfrenchfighters } 
+mutually_exclusive = { focus = BUL_buysovietfighters } 
+mutually_exclusive = { focus = BUL_buygermanfighters } 
+mutually_exclusive = { focus = BUL_buybritishfighters } 
+mutually_exclusive = { focus = BUL_ } 
+ai_will_do = { 
+ factor = 2
+ } 
+completion_reward = { 
+add_equipment_to_stockpile = {
+ type = fighter_equipment_1
+ amount = 75
+ producer = USA
+}
+ } 
+
+ } 
+
+#Focus for Buy Soviet Fighters
+focus = { 
+id = BUL_buysovietfighters
+icon = GFX_focus_chi_mission_to_the_soviet_union
+x = 32
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_fighterfocus focus = BUL_casfocus } 
+mutually_exclusive = { focus = BUL_buyfrenchfighters } 
+mutually_exclusive = { focus = BUL_buyamericanfighters } 
+mutually_exclusive = { focus = BUL_buygermanfighters } 
+mutually_exclusive = { focus = BUL_buybritishfighters } 
+mutually_exclusive = { focus = BUL_ } 
+ai_will_do = { 
+ factor = 4
+ } 
+completion_reward = { 
+add_equipment_to_stockpile = {
+ type = fighter_equipment_1
+ amount = 75
+ producer = SOV
+}
+ } 
+
+ } 
+
+#Focus for Buy German Fighters
+focus = { 
+id = BUL_buygermanfighters
+icon = GFX_focus_chi_mission_to_germany
+x = 34
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_fighterfocus focus = BUL_casfocus } 
+mutually_exclusive = { focus = BUL_buybritishfighters } 
+mutually_exclusive = { focus = BUL_buyfrenchfighters } 
+mutually_exclusive = { focus = BUL_buyamericanfighters } 
+mutually_exclusive = { focus = BUL_buysovietfighters } 
+ai_will_do = { 
+ factor = 6
+ } 
+completion_reward = { 
+add_equipment_to_stockpile = {
+ type = fighter_equipment_1
+ amount = 75
+ producer = GER
+}
+ } 
+
+ } 
+
+#Focus for German Industrial Developpement
+focus = { 
+id = BUL_germanindustrialdeveloppement
+icon = GFX_goal_generic_construct_civilian
+x = 13
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_strengthenthegermaninfluence } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Soviet Industrial Developpement
+focus = { 
+id = BUL_sovietindustrialdeveloppement
+icon = GFX_goal_generic_construct_civilian
+x = 15
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_strengthenthesovietinfluence } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+
+random_owned_controlled_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+ } 
+
+ } 
+
+#Focus for Bulgarian Politics
+focus = { 
+id = BUL_bulgarianpolitics
+icon = GFX_goal_generic_national_unity
+x = 3
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power= 150
+ } 
+
+ } 
+
+#Focus for No More Tsar
+focus = { 
+id = BUL_nomoretsar
+icon = GFX_goal_generic_forceful_treaty
+x = 1
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_bulgarianpolitics } 
+mutually_exclusive = { focus = BUL_keepthetsar } 
+ai_will_do = { 
+ factor = 3
+ } 
+completion_reward = { 
+news_event = { id = hoirebalancedfrp.5 } 
+add_stability= -0.05
+add_political_power= 150
+ } 
+
+ } 
+
+#Focus for Join The Axis
+focus = { 
+id = BUL_dDrHMeRj
+icon = GFX_focus_chi_mission_to_germany
+x = 4
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_militaryindustryeffort } 
+ai_will_do = { 
+ factor = 1
+ } 
+bypass = { 
+is_in_faction= yes
+ } 
+available = { 
+threat > 0.45
+ } 
+completion_reward = { 
+GER = { country_event = { days = 1 id = generic.2 } }
+ } 
+
+ } 
+
+#Focus for Industry Focus
+focus = { 
+id = BUL_industryfocus
+icon = GFX_goal_generic_production
+x = 14
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+ } 
+
+ } 
+
+#Focus for USSR Industrial Investement
+focus = { 
+id = BUL_ussrindustrialinvestement
+icon = GFX_focus_generic_join_comintern
+x = 0
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_rapprochementwiththeussr } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+custom_effect_tooltip  = BUL_focus_1
+hidden_effect = {
+211 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = industrial_complex
+ level = 1
+ instant_build = yes
+}
+}
+
+48 = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+ type = arms_factory
+ level = 1
+ instant_build = yes
+}
+}
+}
+ } 
+
+ } 
+
+#Focus for Buy British Fighters
+focus = { 
+id = BUL_buybritishfighters
+icon = GFX_focus_chi_british_cooperation
+x = 26
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_fighterfocus focus = BUL_casfocus } 
+mutually_exclusive = { focus = BUL_buyfrenchfighters } 
+mutually_exclusive = { focus = BUL_buyamericanfighters } 
+mutually_exclusive = { focus = BUL_buysovietfighters } 
+mutually_exclusive = { focus = BUL_buygermanfighters } 
+mutually_exclusive = { focus = BUL_ } 
+ai_will_do = { 
+ factor = 2
+ } 
+completion_reward = { 
+add_equipment_to_stockpile = {
+ type = fighter_equipment_1
+ amount = 75
+ producer = ENG
+}
+ } 
+
+ } 
+
+#Focus for CAS Focus
+focus = { 
+id = BUL_casfocus
+icon = GFX_goal_generic_air_fighter2
+x = 30
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_CjBLSTAp } 
+mutually_exclusive = { focus = BUL_fighterfocus } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+			
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = cas_bomber
+			}
+ } 
+
+ } 
+
+#Focus for Fighter Focus
+focus = { 
+id = BUL_fighterfocus
+icon = GFX_goal_generic_air_fighter2
+x = 28
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_CjBLSTAp } 
+mutually_exclusive = { focus = BUL_casfocus } 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 0.8
+uses = 2
+technology = early_fighter
+technology = fighter1
+technology = fighter2
+technology = fighter3
+technology = heavy_fighter1
+technology = heavy_fighter2
+technology = heavy_fighter3
+}
+ } 
+
+ } 
+
+#Focus for Air Focus
+focus = { 
+id = BUL_CjBLSTAp
+icon = GFX_goal_generic_build_airforce
+x = 29
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 5
+ } 
+completion_reward = { 
+add_tech_bonus = {
+
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+
+					
+48 = {
+add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+}
+ } 
+
+ } 
+
+#Focus for Join The Comintern
+focus = { 
+id = BUL_FhMSOwQd
+icon = GFX_goal_support_fourth_int
+x = 0
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_ussrindustrialinvestement } 
+ai_will_do = { 
+ factor = 5
+ } 
+bypass = { 
+is_in_faction= yes
+ } 
+completion_reward = { 
+SOV = { country_event = { days = 1 id = generic.2 } }
+ } 
+
+ } 
+
+#Focus for Finish The Army Reform
+focus = { 
+id = BUL_finishthearmyreform
+icon = GFX_focus_prc_infiltration
+x = 24
+y = 3
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_XEDdwTca } 
+ai_will_do = { 
+ factor = 5
+ } 
+available = { 
+threat > 0.25
+ } 
+completion_reward = { 
+custom_effect_tooltip  = BUL_focus_5
+
+hidden_effect = {
+remove_ideas = BUL_idea_greatwar2
+}
+ } 
+
+ } 
+
+#Focus for Fresh New Army
+focus = { 
+id = BUL_freshnewarmy
+icon = GFX_focus_generic_combined_arms
+x = 20
+y = 4
+cost = 15
+available_if_capitulated = yes 
+prerequisite = { focus = BUL_equipmenteffortii } 
+ai_will_do = { 
+ factor = 5
+ } 
+available = { 
+threat > 0.40
+ } 
+completion_reward = { 
+remove_ideas = BUL_idea_badarmy
+ } 
+
+ } 
+
+#End of focuses 
+ }
